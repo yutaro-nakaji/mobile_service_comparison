@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_19_092740) do
+ActiveRecord::Schema.define(version: 2020_09_19_103220) do
 
   create_table "simulations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "duration_of_call"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 2020_09_19_092740) do
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "current_phone"
     t.index ["user_id"], name: "index_simulations_on_user_id"
   end
 

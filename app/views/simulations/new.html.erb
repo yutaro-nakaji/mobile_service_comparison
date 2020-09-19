@@ -1,0 +1,21 @@
+<%= render "shared/header" %>
+
+<div class='simulation-page'>
+  <div class='simulation'>
+    <p class='simulation-title'>料金シュミレーション</p>
+    <p class='simulation-explanation'>以下の質問に答えてください！</p>
+    <br>
+    <div class='simulation-form'>
+      <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.1 現在お使いのキャリア</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class='result'>
+  </div>
+</div>
+
+<%= render "shared/footer" %>
