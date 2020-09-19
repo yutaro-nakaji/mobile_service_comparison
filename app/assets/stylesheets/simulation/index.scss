@@ -1,7 +1,22 @@
+.contents {
+  height: 80vh;
+}
+
+.title-contents {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.service-explain {
+  margin: 20px auto 20px auto;
+}
+
 .main-contents {
   display: flex;
   justify-content: space-around;
   height: 70vh;
+  padding: 10px 0;
 }
 
 .simulation-btn {

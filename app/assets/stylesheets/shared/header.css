@@ -1,4 +1,31 @@
+.page-header {
+  border: solid;
+  height: 10vh;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: black;
+}
+
 .simulation-icon {
   width: 20vw;
-  margin-right: 20vw;
+  height: 10vh;
+  margin: auto;
+}
+
+.lists-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login {
+  margin: 0 1vw 0 1vw;
+}
+
+.sign-up {
+  margin: 0 1vw 0 1vw;
 }
