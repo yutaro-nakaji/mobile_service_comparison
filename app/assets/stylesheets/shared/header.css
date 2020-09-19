@@ -23,9 +23,17 @@
 }
 
 .login {
-  margin: 0 1vw 0 1vw;
+  margin: 0 10px 0 10px;
 }
 
 .sign-up {
-  margin: 0 1vw 0 1vw;
+  margin: 0 10px 0 10px;
+}
+
+.user-nickname {
+  margin: 0 10px 0 10px;
+}
+
+.logout {
+  margin: 0 10px 0 10px;
 }
