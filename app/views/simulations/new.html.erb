@@ -9,57 +9,57 @@
       <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.1 現在お使いのキャリア</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current_phone"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.2 1ヶ月の通話時間</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <div class="weight-bold-text">Q.2 希望の通話プラン</div>
+          <%= f.collection_select(:duration_of_call, CallingPlan.all, :id, :name, {}, {class:"select-box", id:"duration_of_call"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.3 1ヶ月の通信量</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <div class="weight-bold-text">Q.3 希望の通信プラン</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.4 家族の通信キャリア</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"family_mobile"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.5 契約している光回線</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.6 利用しているサービス</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"service"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.7 1番利用しているECサイト</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"ecsite"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.8 1番利用しているクレジットカード</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"creditcard"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.9 1番利用している電子マネー</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"electronic_money"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.10 1番利用しているQRコード決済</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"qr_payment"}) %>
         </div>
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">Q.11 利用している銀行</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"bank"}) %>
         </div>      
     </div>
   </div>
@@ -68,7 +68,7 @@
     <p class='result-title'>シュミレーション結果</p>
     <div class='rank-result'>
       <span class='rank'>1位</span>
-      <span id='1st-carrier'></span>
+      <span id='1st-carrier-name'></span>
       <span>
       <span class='monthly'>月々</span>
       <span id='1st-carrier-fee'></span>
@@ -76,7 +76,7 @@
     </div>
     <div class='rank-result'>
       <span class='rank'>2位</span>
-      <span id='2nd-carrier'></span>
+      <span id='2nd-carrier-name'></span>
       <span>
       <span class='monthly'>月々</span>
       <span id='2nd-carrier-fee'></span>
@@ -84,7 +84,7 @@
     </div>
     <div class='rank-result'>
       <span class='rank'>3位</span>
-      <span id='3rd-carrier'></span>
+      <span id='3rd-carrier-name'></span>
       <span>
       <span class='monthly'>月々</span>
       <span id='3rd-carrier-fee'></span>
@@ -92,7 +92,7 @@
     </div>
     <div class='rank-result'>
       <span class='rank'>4位</span>
-      <span id='4th-carrier'></span>
+      <span id='4th-carrier-name'></span>
       <span>
       <span class='monthly'>月々</span>
       <span id='4th-carrier-fee'></span>
