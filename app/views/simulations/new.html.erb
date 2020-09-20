@@ -11,10 +11,97 @@
           <div class="weight-bold-text">Q.1 現在お使いのキャリア</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
         </div>
-      <% end %>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.2 1ヶ月の通話時間</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.3 1ヶ月の通信量</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.4 家族の通信キャリア</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.5 契約している光回線</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.6 利用しているサービス</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.7 1番利用しているECサイト</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.8 1番利用しているクレジットカード</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.9 1番利用している電子マネー</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.10 1番利用しているQRコード決済</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">Q.11 利用している銀行</div>
+          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current-phone"}) %>
+        </div>      
     </div>
   </div>
+  <%= link_to image_tag("arrow.png", class:"arrow-icon") %>
   <div class='result'>
+    <p class='result-title'>シュミレーション結果</p>
+    <div class='rank-result'>
+      <span class='rank'>1位</span>
+      <span id='1st-carrier'></span>
+      <span>
+      <span class='monthly'>月々</span>
+      <span id='1st-carrier-fee'></span>
+      <span class='yen'>円</span>
+    </div>
+    <div class='rank-result'>
+      <span class='rank'>2位</span>
+      <span id='2nd-carrier'></span>
+      <span>
+      <span class='monthly'>月々</span>
+      <span id='2nd-carrier-fee'></span>
+      <span class='yen'>円</span>
+    </div>
+    <div class='rank-result'>
+      <span class='rank'>3位</span>
+      <span id='3rd-carrier'></span>
+      <span>
+      <span class='monthly'>月々</span>
+      <span id='3rd-carrier-fee'></span>
+      <span class='yen'>円</span>
+    </div>
+    <div class='rank-result'>
+      <span class='rank'>4位</span>
+      <span id='4th-carrier'></span>
+      <span>
+      <span class='monthly'>月々</span>
+      <span id='4th-carrier-fee'></span>
+      <span class='yen'>円</span>
+    </div>
+    <div class="show-btn-contents">
+      <%= f.submit "シュミレーション結果詳細" ,class:"show-btn" %>
+    </div>
+  <% end %>
   </div>
 </div>
 
