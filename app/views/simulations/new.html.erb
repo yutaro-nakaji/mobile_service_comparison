@@ -8,57 +8,62 @@
     <div class='simulation-form'>
       <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.1 現在お使いのキャリア</div>
+          <div class="weight-bold-text">現在お使いのキャリア</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current_phone"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.2 希望の通話プラン</div>
+          <div class="weight-bold-text">希望の通話プラン</div>
           <%= f.collection_select(:duration_of_call, CallingPlan.all, :id, :name, {}, {class:"select-box", id:"duration_of_call"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.3 1ヶ月の想定データ通信量</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %>
+          <div class="weight-bold-text">4G or 5G どちらを契約予定ですか</div>
+          <%= f.select :generation, [["4G", 1],["5G", 2]], include_blank: "---", class:"select-box", id:"generation" %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.4 家族の通信キャリア</div>
+          <div class="weight-bold-text">1ヶ月の想定データ通信量</div>
+          <%= f.collection_select(:data_traffic, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %>
+        </div>
+        <br>
+        <div class='simulation-question'>
+          <div class="weight-bold-text">家族の通信キャリア</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"family_mobile"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.5 契約している光回線</div>
+          <div class="weight-bold-text">契約している光回線</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.6 利用しているサービス</div>
+          <div class="weight-bold-text">利用しているサービス</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"service"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.7 1番利用しているECサイト</div>
+          <div class="weight-bold-text">1番利用しているECサイト</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"ecsite"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.8 1番利用しているクレジットカード</div>
+          <div class="weight-bold-text">1番利用しているクレジットカード</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"creditcard"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.9 1番利用している電子マネー</div>
+          <div class="weight-bold-text">1番利用している電子マネー</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"electronic_money"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.10 1番利用しているQRコード決済</div>
+          <div class="weight-bold-text">1番利用しているQRコード決済</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"qr_payment"}) %>
         </div>
         <br>
         <div class='simulation-question'>
-          <div class="weight-bold-text">Q.11 利用している銀行</div>
+          <div class="weight-bold-text">利用している銀行</div>
           <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"bank"}) %>
         </div>      
     </div>

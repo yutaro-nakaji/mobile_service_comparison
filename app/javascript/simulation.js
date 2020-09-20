@@ -28,9 +28,9 @@ function price_simu(){
   let softbank_calling_fee = 0;
   let rakuten_calling_fee = 0;
 
-  const duration_of_call = document.getElementById("duration_of_call");
+  //通話プラン選択
   duration_of_call.addEventListener('input', () => {
-    const callingplan = duration_of_call.value; 
+    const callingplan = document.getElementById("duration_of_call").value; 
     switch (callingplan) {
       case "2":
         docomo_calling_fee = 0;
@@ -54,7 +54,57 @@ function price_simu(){
     fee_calc();
   });
 
-  
+  let docomo_data_fee = 0;
+  let au_data_fee = 0;
+  let softbank_data_fee = 0;
+  let rakuten_data_fee = 0;
+
+  //通信データ量選択
+  data_traffic.addEventListener('input', () => {
+    const generation = document.getElementById("generation").value;
+    const data_traffic = document.getElementById("data_traffic").value;
+    switch (generation) {
+      case "2": //4G
+        switch (generation) {
+          case "2": //~1GB
+            docomo_data_fee = 3150;
+            au_data_fee = 3150;
+            softbank_data_fee = 3980;
+            rakuten_data_fee = 0;
+          case "3": //~2GB
+            docomo_data_fee = 4150;
+            au_data_fee = 4650;
+            softbank_data_fee = 5980;
+            rakuten_data_fee = 0;
+          case "4": //~3GB
+            docomo_data_fee = 4150;
+            au_data_fee = 4650;
+            softbank_data_fee = 7480;
+            rakuten_data_fee = 0;
+          case "5": //~4GB
+            docomo_data_fee = 5150;
+            au_data_fee = 4650;
+            softbank_data_fee = 7480;
+            rakuten_data_fee = 0;
+          case "6": //~5GB
+            docomo_data_fee = 5150;
+            au_data_fee = 6150;
+            softbank_data_fee = 7480;
+            rakuten_data_fee = 0;
+          case "7": //~7GB
+            docomo_data_fee = 6150;
+            au_data_fee = 6150;
+            softbank_data_fee = 7480;
+            rakuten_data_fee = 0;
+          case "8","9","10","11": //30GB~
+            docomo_data_fee = 7150;
+            au_data_fee = 7650;
+            softbank_data_fee = 7480;
+            rakuten_data_fee = 0;
+        }
+      case "3": //5G
+    }
+  });
 
   function fee_calc(){
     docomo_fee = 
