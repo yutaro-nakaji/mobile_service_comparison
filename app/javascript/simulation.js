@@ -22,24 +22,41 @@ function price_simu(){
 
   const current_phone = document.getElementById("current_phone");
 
+  let docomo_calling_fee = 0;
+  let au_calling_fee = 0;
+  let softbank_calling_fee = 0;
+  let rakuten_calling_fee = 0;
+
   const duration_of_call = document.getElementById("duration_of_call");
   duration_of_call.addEventListener('input', () => {
     const callingplan = duration_of_call.value; 
     switch (callingplan) {
       case "3":
-        docomo_fee = docomo_fee + 700;
-        au_fee += 800;
-        softbank_fee += 800;
-        rakuten_fee += 0;
+        docomo_calling_fee = 700;
+        au_calling_fee = 800;
+        softbank_calling_fee = 800;
+        rakuten_calling_fee = 0;
         //console.log(docomo_fee);
         break;
       case "4":
-        docomo_fee += 1700;
-        au_fee += 1800;
-        softbank_fee += 1800;
-        rakuten_fee += 0;
+        docomo_calling_fee = 1700;
+        au_calling_fee = 1800;
+        softbank_calling_fee = 1800;
+        rakuten_calling_fee = 0;
         break;
     }
+    fee_calc();
+  });
+  function fee_calc(){
+    docomo_fee = 
+    docomo_calling_fee + 0;
+    au_fee =
+    au_calling_fee + 0;
+    softbank_fee =
+    softbank_calling_fee + 0;
+    rakuten_fee =
+    rakuten_calling_fee + 0;
+
     ranking = [
       {name: "docomo", fee: docomo_fee},
       {name: "au", fee: au_fee},
@@ -55,12 +72,11 @@ function price_simu(){
     rank2_name.textContent = ranking[1].name;
     rank3_name.textContent = ranking[2].name;
     rank4_name.textContent = ranking[3].name;
-
     rank1_fee.textContent = ranking[0].fee;
     rank2_fee.textContent = ranking[1].fee;
     rank3_fee.textContent = ranking[2].fee;
     rank4_fee.textContent = ranking[3].fee;
-  });
+  }
 }
 //ページがロードされた時イベント発火
 window.addEventListener('load', price_simu);
