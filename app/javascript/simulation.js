@@ -1,4 +1,5 @@
 function price_simu(){
+  //console.log(docomo_fee);
   let docomo_fee = 0;
   let au_fee = 0;
   let softbank_fee = 0;
@@ -31,12 +32,17 @@ function price_simu(){
   duration_of_call.addEventListener('input', () => {
     const callingplan = duration_of_call.value; 
     switch (callingplan) {
+      case "2":
+        docomo_calling_fee = 0;
+        au_calling_fee = 0;
+        softbank_calling_fee = 0;
+        rakuten_calling_fee = 0;
+        break;
       case "3":
         docomo_calling_fee = 700;
         au_calling_fee = 800;
         softbank_calling_fee = 800;
         rakuten_calling_fee = 0;
-        //console.log(docomo_fee);
         break;
       case "4":
         docomo_calling_fee = 1700;
@@ -47,6 +53,9 @@ function price_simu(){
     }
     fee_calc();
   });
+
+  
+
   function fee_calc(){
     docomo_fee = 
     docomo_calling_fee + 0;
