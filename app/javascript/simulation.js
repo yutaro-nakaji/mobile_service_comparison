@@ -63,58 +63,111 @@ function price_simu(){
   data_traffic.addEventListener('input', () => {
     const generation = document.getElementById("generation").value;
     const data_traffic = document.getElementById("data_traffic").value;
+    console.log(generation);
     switch (generation) {
       case "2": //4G
-        switch (generation) {
+        switch (data_traffic) {
           case "2": //~1GB
             docomo_data_fee = 3150;
             au_data_fee = 3150;
             softbank_data_fee = 3980;
             rakuten_data_fee = 0;
+            break;
           case "3": //~2GB
             docomo_data_fee = 4150;
             au_data_fee = 4650;
             softbank_data_fee = 5980;
             rakuten_data_fee = 0;
+            break;
           case "4": //~3GB
             docomo_data_fee = 4150;
             au_data_fee = 4650;
             softbank_data_fee = 7480;
             rakuten_data_fee = 0;
+            break;
           case "5": //~4GB
             docomo_data_fee = 5150;
             au_data_fee = 4650;
             softbank_data_fee = 7480;
             rakuten_data_fee = 0;
+            break;
           case "6": //~5GB
             docomo_data_fee = 5150;
             au_data_fee = 6150;
             softbank_data_fee = 7480;
             rakuten_data_fee = 0;
+            break;
           case "7": //~7GB
             docomo_data_fee = 6150;
             au_data_fee = 6150;
             softbank_data_fee = 7480;
             rakuten_data_fee = 0;
+            break;
           case "8","9","10","11": //30GB~
             docomo_data_fee = 7150;
             au_data_fee = 7650;
             softbank_data_fee = 7480;
             rakuten_data_fee = 0;
+            break;
         }
       case "3": //5G
+        switch (data_traffic) {
+          case "2": //~1GB
+            docomo_data_fee = 3150;
+            au_data_fee = 4150;
+            softbank_data_fee = 4980;
+            rakuten_data_fee = 0;
+            break;
+          case "3": //~2GB
+            docomo_data_fee = 4150;
+            au_data_fee = 5650;
+            softbank_data_fee = 6980;
+            rakuten_data_fee = 0;
+            break;
+          case "4": //~3GB
+            docomo_data_fee = 4150;
+            au_data_fee = 5650;
+            softbank_data_fee = 8480;
+            rakuten_data_fee = 0;
+            break;
+          case "5": //~4GB
+            docomo_data_fee = 5150;
+            au_data_fee = 5650;
+            softbank_data_fee = 8480;
+            rakuten_data_fee = 0;
+            break;
+          case "6": //~5GB
+            docomo_data_fee = 5150;
+            au_data_fee = 7150;
+            softbank_data_fee = 8480;
+            rakuten_data_fee = 0;
+            break;
+          case "7": //~7GB
+            docomo_data_fee = 6150;
+            au_data_fee = 7150;
+            softbank_data_fee = 8480;
+            rakuten_data_fee = 0;
+            break;
+          case "8","9","10","11": //30GB~
+            docomo_data_fee = 7650;
+            au_data_fee = 8650;
+            softbank_data_fee = 8480;
+            rakuten_data_fee = 0;
+            break;
+        }
     }
+    fee_calc();
   });
 
   function fee_calc(){
     docomo_fee = 
-    docomo_calling_fee + 0;
+    docomo_calling_fee + docomo_data_fee;
     au_fee =
-    au_calling_fee + 0;
+    au_calling_fee + au_data_fee;
     softbank_fee =
-    softbank_calling_fee + 0;
+    softbank_calling_fee + softbank_data_fee;
     rakuten_fee =
-    rakuten_calling_fee + 0;
+    rakuten_calling_fee + rakuten_data_fee;
 
     ranking = [
       {name: "docomo", fee: docomo_fee},

@@ -19,7 +19,7 @@
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">4G or 5G どちらを契約予定ですか</div>
-          <%= f.select :generation, [["4G", 1],["5G", 2]], include_blank: "---", class:"select-box", id:"generation" %>
+          <%= f.collection_select(:generation, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %>
         </div>
         <br>
         <div class='simulation-question'>
