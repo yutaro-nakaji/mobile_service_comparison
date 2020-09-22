@@ -71,37 +71,101 @@
   <%= link_to image_tag("arrow.png", class:"arrow-icon") %>
   <div class='result'>
     <p class='result-title'>シュミレーション結果</p>
-    <div class='rank-result'>
-      <span class='rank'>1位</span>
-      <span id='1st-carrier-name'></span>
-      <span>
-      <span class='monthly'>月々</span>
-      <span id='1st-carrier-fee'></span>
-      <span class='yen'>円</span>
-    </div>
-    <div class='rank-result'>
-      <span class='rank'>2位</span>
-      <span id='2nd-carrier-name'></span>
-      <span>
-      <span class='monthly'>月々</span>
-      <span id='2nd-carrier-fee'></span>
-      <span class='yen'>円</span>
-    </div>
-    <div class='rank-result'>
-      <span class='rank'>3位</span>
-      <span id='3rd-carrier-name'></span>
-      <span>
-      <span class='monthly'>月々</span>
-      <span id='3rd-carrier-fee'></span>
-      <span class='yen'>円</span>
-    </div>
-    <div class='rank-result'>
-      <span class='rank'>4位</span>
-      <span id='4th-carrier-name'></span>
-      <span>
-      <span class='monthly'>月々</span>
-      <span id='4th-carrier-fee'></span>
-      <span class='yen'>円</span>
+    <div class='result-table'>
+      <table class='result-rank'>
+        <tr>
+          <th class= 'line1st column1st'>順位</th>
+          <th class= 'line1st column2nd'>キャリア</th>
+          <th class= 'line1st column3rd'>合計金額</th>
+          <th class= 'line1st'>通話料金</th>
+          <th class= 'line1st'>データ通信料金</th>
+          <th class= 'line1st'>家族割</th>
+          <th class= 'line1st'>光回線セット割</th>
+          <th class= 'line1st'>利用サービス</th>
+          <th class= 'line1st'>利用ECサイト</th>
+          <th class= 'line1st'>利用クレカ</th>
+          <th class= 'line1st'>利用電子マネー</th>
+          <th class= 'line1st'>利用QRコード決済</th>
+          <th class= 'line1st'>利用銀行</th>
+        </tr>
+        <tr>
+          <td class='line2nd column1st'>1位</td>
+          <td class='line2nd column2nd', id='1st-carrier-name'></td>
+          <td class='line2nd column3rd'>
+            <span>月々</span>
+            <span id='1st-carrier-fee'></span>
+            <span>円</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class='line3rd column1st'>2位</td>
+          <td class='line3rd column2nd', id='2nd-carrier-name'></td>
+          <td class='line3rd column3rd'>
+            <span>月々</span>
+            <span id='2nd-carrier-fee'></span>
+            <span>円</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class='line4th column1st'>3位</td>
+          <td class='line4th column2nd', id='3rd-carrier-name'></td>
+          <td class='line4th column3rd'>
+            <span>月々</span>
+            <span id='3rd-carrier-fee'></span>
+            <span>円</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class='line5th column1st'>4位</td>
+          <td class='line5th column2nd', id='4th-carrier-name'></td>
+          <td class='line5th column3rd'>
+            <span>月々</span>
+            <span id='4th-carrier-fee'></span>
+            <span>円</span>
+          </td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <!--2行目2位以降続く-->
+      </table>
     </div>
     <div class="show-btn-contents">
       <%= f.submit "シュミレーション結果詳細" ,class:"show-btn" %>
