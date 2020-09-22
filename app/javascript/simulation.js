@@ -11,15 +11,26 @@ function price_simu(){
     {name: "rakuten", fee: rakuten_fee}
   ];
 
+  //通信キャリア名
   const rank1_name = document.getElementById("1st-carrier-name");
   const rank2_name = document.getElementById("2nd-carrier-name");
   const rank3_name = document.getElementById("3rd-carrier-name");
   const rank4_name = document.getElementById("4th-carrier-name");
-
+  //合計金額
   const rank1_fee = document.getElementById("1st-carrier-fee");
   const rank2_fee = document.getElementById("2nd-carrier-fee");
   const rank3_fee = document.getElementById("3rd-carrier-fee");
   const rank4_fee = document.getElementById("4th-carrier-fee");
+  //通話プラン金額
+  const rank1_calling_fee = document.getElementById("1st-calling-fee");
+  const rank2_calling_fee = document.getElementById("2nd-calling-fee");
+  const rank3_calling_fee = document.getElementById("3rd-calling-fee");
+  const rank4_calling_fee = document.getElementById("4th-calling-fee");
+  //通信プラン金額
+  const rank1_data_fee = document.getElementById("1st-data-fee");
+  const rank2_data_fee = document.getElementById("2nd-data-fee");
+  const rank3_data_fee = document.getElementById("3rd-data-fee");
+  const rank4_data_fee = document.getElementById("4th-data-fee");
 
   const current_phone = document.getElementById("current_phone");
 
@@ -170,10 +181,10 @@ function price_simu(){
     rakuten_calling_fee + rakuten_data_fee;
 
     ranking = [
-      {name: "docomo", fee: docomo_fee},
-      {name: "au", fee: au_fee},
-      {name: "softbank", fee: softbank_fee},
-      {name: "rakuten", fee: rakuten_fee}
+      {name: "docomo", fee: docomo_fee, calling_fee: docomo_calling_fee, data_fee: docomo_data_fee},
+      {name: "au", fee: au_fee, calling_fee: au_calling_fee, data_fee: au_data_fee},
+      {name: "softbank", fee: softbank_fee, calling_fee: softbank_calling_fee, data_fee: softbank_data_fee},
+      {name: "rakuten", fee: rakuten_fee, calling_fee: rakuten_calling_fee, data_fee: rakuten_data_fee}
     ];
     ranking.sort(function( a, b ){
       if( a.fee < b.fee ) return -1;
@@ -188,6 +199,14 @@ function price_simu(){
     rank2_fee.textContent = ranking[1].fee;
     rank3_fee.textContent = ranking[2].fee;
     rank4_fee.textContent = ranking[3].fee;
+    rank1_calling_fee.textContent = ranking[0].calling_fee;
+    rank2_calling_fee.textContent = ranking[1].calling_fee;
+    rank3_calling_fee.textContent = ranking[2].calling_fee;
+    rank4_calling_fee.textContent = ranking[3].calling_fee;
+    rank1_data_fee.textContent = ranking[0].data_fee;
+    rank2_data_fee.textContent = ranking[1].data_fee;
+    rank3_data_fee.textContent = ranking[2].data_fee;
+    rank4_data_fee.textContent = ranking[3].data_fee;
   }
 }
 //ページがロードされた時イベント発火
