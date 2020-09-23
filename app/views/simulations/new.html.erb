@@ -29,7 +29,8 @@
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">家族の通信キャリア</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"family_mobile"}) %>
+          <%= f.collection_select(:family_mobile, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"family_mobile"}) %>
+          <%= f.collection_select(:unit, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"family_mobile"}) %>
         </div>
         <br>
         <div class='simulation-question'>

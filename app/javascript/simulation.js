@@ -34,12 +34,11 @@ function price_simu(){
 
   const current_phone = document.getElementById("current_phone");
 
+  //通話プラン選択
   let docomo_calling_fee = 0;
   let au_calling_fee = 0;
   let softbank_calling_fee = 0;
   let rakuten_calling_fee = 0;
-
-  //通話プラン選択
   duration_of_call.addEventListener('input', () => {
     const callingplan = document.getElementById("duration_of_call").value; 
     switch (callingplan) {
@@ -65,12 +64,11 @@ function price_simu(){
     fee_calc();
   });
 
+  //通信データ量選択
   let docomo_data_fee = 0;
   let au_data_fee = 0;
   let softbank_data_fee = 0;
   let rakuten_data_fee = 0;
-
-  //通信データ量選択
   data_traffic.addEventListener('input', () => {
     const generation = document.getElementById("generation").value;
     const data_traffic = document.getElementById("data_traffic").value;
@@ -170,6 +168,7 @@ function price_simu(){
     fee_calc();
   });
 
+  //金額計算&金額出力
   function fee_calc(){
     docomo_fee = 
     docomo_calling_fee + docomo_data_fee;
@@ -191,23 +190,27 @@ function price_simu(){
       if( a.fee > b.fee ) return 1;
       return 0;
     });
+    //通信キャリア名
     rank1_name.textContent = ranking[0].name;
     rank2_name.textContent = ranking[1].name;
     rank3_name.textContent = ranking[2].name;
     rank4_name.textContent = ranking[3].name;
+    //合計金額
     rank1_fee.textContent = ranking[0].fee;
     rank2_fee.textContent = ranking[1].fee;
     rank3_fee.textContent = ranking[2].fee;
     rank4_fee.textContent = ranking[3].fee;
+    //通話料金
     rank1_calling_fee.textContent = ranking[0].calling_fee;
     rank2_calling_fee.textContent = ranking[1].calling_fee;
     rank3_calling_fee.textContent = ranking[2].calling_fee;
     rank4_calling_fee.textContent = ranking[3].calling_fee;
+    //データ通信料金
     rank1_data_fee.textContent = ranking[0].data_fee;
     rank2_data_fee.textContent = ranking[1].data_fee;
     rank3_data_fee.textContent = ranking[2].data_fee;
     rank4_data_fee.textContent = ranking[3].data_fee;
   }
 }
-//ページがロードされた時イベント発火
+
 window.addEventListener('load', price_simu);
