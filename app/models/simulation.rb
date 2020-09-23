@@ -5,5 +5,6 @@ class Simulation < ApplicationRecord
   belongs_to_active_hash :calling_plan
   belongs_to_active_hash :data_traffic
   belongs_to_active_hash :generation
+  belongs_to_active_hash :number
 
 end
