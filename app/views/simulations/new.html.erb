@@ -39,7 +39,7 @@
         <br>
         <div class='simulation-question'>
           <div class="weight-bold-text">契約している光回線</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
+          <%= f.collection_select(:optical_line, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
         </div>
         <br>
         <div class='simulation-question'>
@@ -112,7 +112,10 @@
             <span class= 'fee', id='1st-family-discount'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td></td>
+          <td class='line2 column7'>
+            <span class= 'fee', id='1st-optical-line-discount'></span>
+            <span class= 'yen'>円</span>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -135,11 +138,14 @@
             <span class= 'fee', id='2nd-data-fee'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td class='line2 column6'>
+          <td class='line3 column6'>
             <span class= 'fee', id='2nd-family-discount'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td></td>
+          <td class='line3 column7'>
+            <span class= 'fee', id='2nd-optical-line-discount'></span>
+            <span class= 'yen'>円</span>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -162,11 +168,14 @@
             <span class= 'fee', id='3rd-data-fee'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td class='line2 column6'>
+          <td class='line4 column6'>
             <span class= 'fee', id='3rd-family-discount'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td></td>
+          <td class='line4 column7'>
+            <span class= 'fee', id='3rd-optical-line-discount'></span>
+            <span class= 'yen'>円</span>
+          </td>
           <td></td>
           <td></td>
           <td></td>
@@ -189,11 +198,14 @@
             <span class= 'fee', id='4th-data-fee'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td class='line2 column6'>
+          <td class='line5 column6'>
             <span class= 'fee', id='4th-family-discount'></span>
             <span class= 'yen'>円</span>
           </td>
-          <td></td>
+          <td class='line5 column7'>
+            <span class= 'fee', id='4th-optical-line-discount'></span>
+            <span class= 'yen'>円</span>
+          </td>
           <td></td>
           <td></td>
           <td></td>
