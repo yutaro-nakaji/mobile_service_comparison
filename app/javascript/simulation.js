@@ -31,6 +31,11 @@ function price_simu(){
   const rank2_data_fee = document.getElementById("2nd-data-fee");
   const rank3_data_fee = document.getElementById("3rd-data-fee");
   const rank4_data_fee = document.getElementById("4th-data-fee");
+  //家族割金額
+  const rank1_family_discount = document.getElementById("1st-family-discount");
+  const rank2_family_discount = document.getElementById("2nd-family-discount");
+  const rank3_family_discount = document.getElementById("3rd-family-discount");
+  const rank4_family_discount = document.getElementById("4th-family-discount");
 
   const current_phone = document.getElementById("current_phone");
 
@@ -168,22 +173,86 @@ function price_simu(){
     fee_calc();
   });
 
+  //家族割適用
+  let family_discount_docomo = 0;
+  let family_discount_au = 0;
+  let family_discount_softbank = 0;
+  let family_discount_rakuten = 0;
+  family_docomo.addEventListener('input', () => {
+    const family_docomo = document.getElementById("family_docomo").value;
+    switch (family_docomo) {
+      case "1": 
+        family_discount_docomo = 0;
+        break;
+      case "2": 
+        family_discount_docomo = -500;
+        break;
+      case "3","4": 
+        family_discount_docomo = -1000;
+        break;
+    }
+    fee_calc();
+  });
+  family_au.addEventListener('input', () => {
+    const data_traffic = document.getElementById("data_traffic").value;
+    const family_au = document.getElementById("family_au").value;
+    switch (family_au) {
+      case "1": 
+        family_discount_au = 0;
+        break;
+      case "2": 
+        family_discount_au = -500;
+        break;
+      case "3": 
+        family_discount_au = -1000;
+        break;
+      case "4": 
+      switch (data_traffic) {
+        case "2","3","4","5","6","7": 
+          family_discount_au = -1000;
+          break;
+        case "8","9","10","11": 
+          family_discount_au = -2020;
+          break;
+      }
+    }
+    fee_calc();
+  });
+  family_softbank.addEventListener('input', () => {
+    const family_softbank = document.getElementById("family_softbank").value;
+    switch (family_softbank) {
+      case "1": 
+        family_discount_softbank = 0;
+        break;
+      case "2": 
+        family_discount_softbank = -500;
+        break;
+      case "3": 
+        family_discount_softbank = -1500;
+        break;
+      case "4": 
+        family_discount_softbank = -2000;
+        break;
+    }
+    fee_calc();
+  });
+
   //金額計算&金額出力
   function fee_calc(){
     docomo_fee = 
-    docomo_calling_fee + docomo_data_fee;
+    docomo_calling_fee + docomo_data_fee + family_discount_docomo;
     au_fee =
-    au_calling_fee + au_data_fee;
+    au_calling_fee + au_data_fee + family_discount_au;
     softbank_fee =
-    softbank_calling_fee + softbank_data_fee;
+    softbank_calling_fee + softbank_data_fee + family_discount_softbank;
     rakuten_fee =
-    rakuten_calling_fee + rakuten_data_fee;
+    rakuten_calling_fee + rakuten_data_fee + family_discount_rakuten;
 
     ranking = [
-      {name: "docomo", fee: docomo_fee, calling_fee: docomo_calling_fee, data_fee: docomo_data_fee},
-      {name: "au", fee: au_fee, calling_fee: au_calling_fee, data_fee: au_data_fee},
-      {name: "softbank", fee: softbank_fee, calling_fee: softbank_calling_fee, data_fee: softbank_data_fee},
-      {name: "rakuten", fee: rakuten_fee, calling_fee: rakuten_calling_fee, data_fee: rakuten_data_fee}
+      {name: "docomo", fee: docomo_fee, calling_fee: docomo_calling_fee, data_fee: docomo_data_fee, family_discount: family_discount_docomo},
+      {name: "au", fee: au_fee, calling_fee: au_calling_fee, data_fee: au_data_fee, family_discount: family_discount_au},
+      {name: "softbank", fee: softbank_fee, calling_fee: softbank_calling_fee, data_fee: softbank_data_fee, family_discount: family_discount_softbank},
+      {name: "rakuten", fee: rakuten_fee, calling_fee: rakuten_calling_fee, data_fee: rakuten_data_fee, family_discount: family_discount_rakuten}
     ];
     ranking.sort(function( a, b ){
       if( a.fee < b.fee ) return -1;
@@ -210,6 +279,11 @@ function price_simu(){
     rank2_data_fee.textContent = ranking[1].data_fee;
     rank3_data_fee.textContent = ranking[2].data_fee;
     rank4_data_fee.textContent = ranking[3].data_fee;
+    //家族割料金
+    rank1_family_discount.textContent = ranking[0].family_discount;
+    rank2_family_discount.textContent = ranking[1].family_discount;
+    rank3_family_discount.textContent = ranking[2].family_discount;
+    rank4_family_discount.textContent = ranking[3].family_discount;
   }
 }
 
