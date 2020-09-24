@@ -73,7 +73,7 @@ td {
   text-align: center;
 }
 
-.line1st,.column1st,.column2nd,.column3rd {
+.line1,.column1,.column2,.column3 {
   position: sticky;
   top: 0;
   left: 0;
@@ -90,27 +90,27 @@ td {
   }
 }
 
-.line2nd,.line3rd,.line4th,.line5th {
+.line2,.line3,.line4,.line5 {
   color: #333;
   background: #fff;
 }
 
-.column2nd {
+.column2 {
   position: sticky;
   top: 0;
   left: 200px;
 }
 
-.column3rd {
+.column3 {
   position: sticky;
   top: 0;
   left: 400px;
 }
 
-.line1st {
+.line1 {
   z-index: 1;
 }
 
-.column1st,.column2nd,.column3rd {
+.column1,.column2,.column3 {
   z-index: 2;
 }
