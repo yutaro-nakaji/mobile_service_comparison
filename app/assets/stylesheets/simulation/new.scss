@@ -3,20 +3,39 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 100vh;
+  width: 100vw;
 }
 
 .simulation {
-  height: 75vh;
-  width: 25vw;
+  position: relative;
+  width: 30vw;
+  padding: 10px 0;
+}
+
+.iphone7 {
+  height: 100vh;
+  width: 27vw;
+  margin-left: 1vw;
+}
+
+.simulation-box {
+  height: 74vh;
+  width: 22.7vw;
+  top: 14vh;
+  left: 3.15vw;
   border: solid 1px;
   overflow: scroll;
+  position: absolute;
+  background-color: rgb(255, 255, 255);
 }
 
 .simulation-title {
   font-size: 30px;
   margin: 0 20px 0 20px;
   border-bottom: solid 1px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .simulation-explanation {
@@ -37,9 +56,10 @@
 }
 
 .result {
-  height: 75vh;
-  width: 65vw;
+  height: 95vh;
+  width: 70vw;
   border: solid 1px;
+  padding: 10px 0;
 }
 
 .result-title {
@@ -114,4 +134,8 @@ td {
 
 .column1,.column2,.column3 {
   z-index: 2;
+}
+
+.select-box {
+  width: 20vw;
 }
