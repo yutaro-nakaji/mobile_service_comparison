@@ -12,7 +12,13 @@
         <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
           <div class='simulation-question'>
             <div class="weight-bold-text">現在お使いのキャリアを選択してください</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current_phone"}) %>
+            <group class="inline-radio">
+                <div><label><%=f.radio_button :current_phone, "1" %>docomo</label></div>
+                <div><input type="radio" name="current-carrier" value="1" id='current_carrier'><label>docomo</label></div>
+                <div><input type="radio" name="current-carrier" value="2" id='current_carrier'><label>au</label></div>
+                <div><input type="radio" name="current-carrier" value="3" id='current_carrier'><label>softbank</label></div>
+                <div><input type="radio" name="current-carrier" value="4" id='current_carrier'><label>rakuten</label></div>
+            </group>
           </div>
           <br>
           <div class='simulation-question'>

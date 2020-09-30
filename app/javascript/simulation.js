@@ -31,7 +31,25 @@ function price_simu(){
   const rank3_optical_line_discount = document.getElementById("3rd-optical-line-discount");
   const rank4_optical_line_discount = document.getElementById("4th-optical-line-discount");
 
-  const current_phone = document.getElementById("current_phone");
+  if ('addEventListener' in document) {
+    document.addEventListener('DOMContentLoaded', function() {
+        FastClick.attach(document.body);
+    }, false);
+  }
+
+  //のりかえ割
+  let docomo_trans_discount = 0;
+  let au_trans_discount = 0;
+  let softbank_trans_discount = 0;
+  let rakuten_trans_discount = 0;
+    const current_carrier = document.getElementsByName('current-carrier');
+    current_carrier.forEach(function(e) {
+      e.addEventListener("click", function() {
+      document.querySelector("input:checked[name=current-carrier]").value;
+      });
+  });
+
+  
 
   //通話プラン選択
   let docomo_calling_fee = 0;
