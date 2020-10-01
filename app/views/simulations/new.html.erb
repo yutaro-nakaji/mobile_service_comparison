@@ -51,8 +51,17 @@
           </div>
           <br>
           <div class='simulation-question'>
-            <div class="weight-bold-text">4G or 5G どちらを契約予定ですか</div>
-            <%= f.collection_select(:generation, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %>
+            <div class="weight-bold-text">契約予定の通信方式を選択して下さい</div>
+            <group class="inline-radio">
+              <div>
+                <%= f.radio_button :generation, :"1" %>
+                <%= f.label :generation, "4G" %>
+              </div>
+              <div>
+                <%= f.radio_button :generation, :"2" %>
+                <%= f.label :generation, "5G" %>
+              </div>
+            </group>
           </div>
           <br>
           <div class='simulation-question'>
