@@ -51,22 +51,11 @@
           </div>
           <br>
           <div class='simulation-question'>
-            <div class="weight-bold-text">契約予定の通信方式を選択して下さい</div>
-            <group class="inline-radio">
-              <div>
-                <%= f.radio_button :generation, :"1" %>
-                <%= f.label :generation, "4G" %>
-              </div>
-              <div>
-                <%= f.radio_button :generation, :"2" %>
-                <%= f.label :generation, "5G" %>
-              </div>
-            </group>
-          </div>
-          <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">1ヶ月の想定データ通信量</div>
-            <%= f.collection_select(:data_traffic, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %>
+            <div class="weight-bold-text">1ヶ月の想定データ通信量を選択して下さい</div>
+            <div class="pulldown">
+              <div class="pulldown-gene"><%= f.collection_select(:generation, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %></div>
+              <div class="pulldown-data"><%= f.collection_select(:data_traffic, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %></div>
+            </div>
           </div>
           <br>
           <div class='simulation-question'>

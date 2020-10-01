@@ -85,16 +85,30 @@ function price_simu(){
       fee_calc();
     });
   });
-    
-
+  
   //通信データ量選択
   let docomo_data_fee = 0;
   let au_data_fee = 0;
   let softbank_data_fee = 0;
   let rakuten_data_fee = 0;
+  generation.addEventListener('input', () => {
+    const generation = document.getElementById("generation").value;
+    if (generation != 1) {
+      document.getElementById("generation").classList.add("select-box-checked");
+    }else{
+      document.getElementById("generation").classList.remove("select-box-checked");
+      document.getElementById("generation").classList.add("select-box");
+    }
+  });
   data_traffic.addEventListener('input', () => {
     const generation = document.getElementById("generation").value;
     const data_traffic = document.getElementById("data_traffic").value;
+    if (data_traffic != 1) {
+      document.getElementById("data_traffic").classList.add("select-box-checked");
+    }else{
+      document.getElementById("data_traffic").classList.remove("select-box-checked");
+      document.getElementById("data_traffic").classList.add("select-box");
+    }
     console.log(generation);
     switch (generation) {
       case "2": //4G
