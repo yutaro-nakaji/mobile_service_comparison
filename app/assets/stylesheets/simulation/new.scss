@@ -158,11 +158,11 @@
 }
 
 table {
-  width: 2600px;
+  width: 86vw;
 }
 
 th {
-  width: 200px;
+  width: 7vw;
   height: 50px;
   vertical-align: middle;
   padding: 0 0;
@@ -171,10 +171,10 @@ th {
 }
 
 td {
-  width: 200px;
+  width: 7vw;
   height: 100px;
   vertical-align: middle;
-  padding: 0 15px;
+  padding: 0 0;
   border: 1px solid #ccc;
   text-align: center;
 }
@@ -202,7 +202,7 @@ td {
 }
 
 .column1 {
-  width: 1vw;
+  width: 2vw;
   font-style: oblique;
   font-weight: bold;
 }
@@ -210,13 +210,17 @@ td {
 .column2 {
   position: sticky;
   top: 0;
-  left: 2.8vw;
+  left: 2vw;
+  width: 7vw;
+  font-weight: bold;
 }
 
 .column3 {
   position: sticky;
   top: 0;
-  left: 5vw;
+  left: 8.9vw;
+  width: 7vw;
+  font-weight: bold;
 }
 
 .line1 {
