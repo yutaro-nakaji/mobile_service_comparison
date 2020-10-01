@@ -50,6 +50,7 @@ function price_simu(){
       });
   });
 
+  //console.log();
   
 
   //通話プラン選択
@@ -57,40 +58,57 @@ function price_simu(){
   let au_calling_fee = 0;
   let softbank_calling_fee = 0;
   let rakuten_calling_fee = 0;
-  duration_of_call.addEventListener('input', () => {
-    const callingplan = document.getElementById("duration_of_call").value; 
-    switch (callingplan) {
-      case "2":
-        docomo_calling_fee = 0;
-        au_calling_fee = 0;
-        softbank_calling_fee = 0;
-        rakuten_calling_fee = 0;
-        break;
-      case "3":
-        docomo_calling_fee = 700;
-        au_calling_fee = 800;
-        softbank_calling_fee = 800;
-        rakuten_calling_fee = 0;
-        break;
-      case "4":
-        docomo_calling_fee = 1700;
-        au_calling_fee = 1800;
-        softbank_calling_fee = 1800;
-        rakuten_calling_fee = 0;
-        break;
-    }
-    fee_calc();
+  const calling_plan_list = document.getElementsByName('duration_of_call');
+  calling_plan_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const calling_plan = document.querySelector("input:checked[name=duration_of_call]").value;
+      switch (calling_plan) {
+        case "1":
+          docomo_calling_fee = 0;
+          au_calling_fee = 0;
+          softbank_calling_fee = 0;
+          rakuten_calling_fee = 0;
+          break;
+        case "2":
+          docomo_calling_fee = 700;
+          au_calling_fee = 800;
+          softbank_calling_fee = 800;
+          rakuten_calling_fee = 0;
+          break;
+        case "3":
+          docomo_calling_fee = 1700;
+          au_calling_fee = 1800;
+          softbank_calling_fee = 1800;
+          rakuten_calling_fee = 0;
+          break;
+      }
+      fee_calc();
+    });
   });
-
+  
   //通信データ量選択
   let docomo_data_fee = 0;
   let au_data_fee = 0;
   let softbank_data_fee = 0;
   let rakuten_data_fee = 0;
+  generation.addEventListener('input', () => {
+    const generation = document.getElementById("generation").value;
+    if (generation != 1) {
+      document.getElementById("generation").classList.add("select-box-checked");
+    }else{
+      document.getElementById("generation").classList.remove("select-box-checked");
+      document.getElementById("generation").classList.add("select-box");
+    }
+  });
   data_traffic.addEventListener('input', () => {
     const generation = document.getElementById("generation").value;
     const data_traffic = document.getElementById("data_traffic").value;
-    console.log(generation);
+    if (data_traffic != 1) {
+      document.getElementById("data_traffic").classList.add("select-box-checked");
+    }else{
+      document.getElementById("data_traffic").classList.remove("select-box-checked");
+      document.getElementById("data_traffic").classList.add("select-box");
+    }
     switch (generation) {
       case "2": //4G
         switch (data_traffic) {
@@ -191,63 +209,72 @@ function price_simu(){
   let family_discount_au = 0;
   let family_discount_softbank = 0;
   let family_discount_rakuten = 0;
-  family_docomo.addEventListener('input', () => {
-    const family_docomo = document.getElementById("family_docomo").value;
-    switch (family_docomo) {
-      case "1": 
-        family_discount_docomo = 0;
-        break;
-      case "2": 
-        family_discount_docomo = -500;
-        break;
-      case "3","4": 
-        family_discount_docomo = -1000;
-        break;
-    }
-    fee_calc();
-  });
-  family_au.addEventListener('input', () => {
-    const data_traffic = document.getElementById("data_traffic").value;
-    const family_au = document.getElementById("family_au").value;
-    switch (family_au) {
-      case "1": 
-        family_discount_au = 0;
-        break;
-      case "2": 
-        family_discount_au = -500;
-        break;
-      case "3": 
-        family_discount_au = -1000;
-        break;
-      case "4": 
-      switch (data_traffic) {
-        case "2","3","4","5","6","7": 
-          family_discount_au = -1000;
+  const family_docomo_list = document.getElementsByName('family_docomo');
+  family_docomo_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const family_docomo = document.querySelector("input:checked[name=family_docomo]").value;
+      switch (family_docomo) {
+        case "1": 
+          family_discount_docomo = 0;
           break;
-        case "8","9","10","11": 
-          family_discount_au = -2020;
+        case "2": 
+          family_discount_docomo = -500;
+          break;
+        case "3": 
+          family_discount_docomo = -1000;
           break;
       }
-    }
-    fee_calc();
+      fee_calc();
+    });
   });
-  family_softbank.addEventListener('input', () => {
-    const family_softbank = document.getElementById("family_softbank").value;
-    switch (family_softbank) {
-      case "1": 
-        family_discount_softbank = 0;
-        break;
-      case "2": 
-        family_discount_softbank = -500;
-        break;
-      case "3": 
-        family_discount_softbank = -1500;
-        break;
-      case "4": 
-        family_discount_softbank = -2000;
-        break;
-    }
-    fee_calc();
+  const family_au_list = document.getElementsByName('family_au');
+  family_au_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const family_au = document.querySelector("input:checked[name=family_au]").value;
+      const data_traffic = document.getElementById("data_traffic").value;
+      switch (family_au) {
+        case "1": 
+          family_discount_au = 0;
+          break;
+        case "2": 
+          family_discount_au = -500;
+          break;
+        case "3": 
+          family_discount_au = -1000;
+          break;
+        case "4": 
+        switch (data_traffic) {
+          case "2","3","4","5","6","7": 
+            family_discount_au = -1000;
+            break;
+          case "8","9","10","11": 
+            family_discount_au = -2020;
+            break;
+        }
+      }
+      fee_calc();
+    });
+  });
+  const family_softbank_list = document.getElementsByName('family_softbank');
+  family_softbank_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const family_softbank = document.querySelector("input:checked[name=family_softbank]").value;
+      switch (family_softbank) {
+        case "1": 
+          family_discount_softbank = 0;
+          break;
+        case "2": 
+          family_discount_softbank = -500;
+          break;
+        case "3": 
+          family_discount_softbank = -1500;
+          break;
+        case "4": 
+          family_discount_softbank = -2000;
+          break;
+      }
+      fee_calc();
+    });
   });
 
   //光回線セット割選択
@@ -305,30 +332,30 @@ function price_simu(){
     rank3_name.textContent = ranking[2].name;
     rank4_name.textContent = ranking[3].name;
     //合計金額
-    rank1_fee.textContent = ranking[0].fee;
-    rank2_fee.textContent = ranking[1].fee;
-    rank3_fee.textContent = ranking[2].fee;
-    rank4_fee.textContent = ranking[3].fee;
+    rank1_fee.textContent = ranking[0].fee + "円";
+    rank2_fee.textContent = ranking[1].fee + "円";
+    rank3_fee.textContent = ranking[2].fee + "円";
+    rank4_fee.textContent = ranking[3].fee + "円";
     //通話料金
-    rank1_calling_fee.textContent = ranking[0].calling_fee;
-    rank2_calling_fee.textContent = ranking[1].calling_fee;
-    rank3_calling_fee.textContent = ranking[2].calling_fee;
-    rank4_calling_fee.textContent = ranking[3].calling_fee;
+    rank1_calling_fee.textContent = ranking[0].calling_fee + "円";
+    rank2_calling_fee.textContent = ranking[1].calling_fee + "円";
+    rank3_calling_fee.textContent = ranking[2].calling_fee + "円";
+    rank4_calling_fee.textContent = ranking[3].calling_fee + "円";
     //データ通信料金
-    rank1_data_fee.textContent = ranking[0].data_fee;
-    rank2_data_fee.textContent = ranking[1].data_fee;
-    rank3_data_fee.textContent = ranking[2].data_fee;
-    rank4_data_fee.textContent = ranking[3].data_fee;
+    rank1_data_fee.textContent = ranking[0].data_fee + "円";
+    rank2_data_fee.textContent = ranking[1].data_fee + "円";
+    rank3_data_fee.textContent = ranking[2].data_fee + "円";
+    rank4_data_fee.textContent = ranking[3].data_fee + "円";
     //家族割料金
-    rank1_family_discount.textContent = ranking[0].family_discount;
-    rank2_family_discount.textContent = ranking[1].family_discount;
-    rank3_family_discount.textContent = ranking[2].family_discount;
-    rank4_family_discount.textContent = ranking[3].family_discount;
+    rank1_family_discount.textContent = ranking[0].family_discount + "円";
+    rank2_family_discount.textContent = ranking[1].family_discount + "円";
+    rank3_family_discount.textContent = ranking[2].family_discount + "円";
+    rank4_family_discount.textContent = ranking[3].family_discount + "円";
     //光回線セット割料金
-    rank1_optical_line_discount.textContent = ranking[0].optical_line_discount;
-    rank2_optical_line_discount.textContent = ranking[1].optical_line_discount;
-    rank3_optical_line_discount.textContent = ranking[2].optical_line_discount;
-    rank4_optical_line_discount.textContent = ranking[3].optical_line_discount;
+    rank1_optical_line_discount.textContent = ranking[0].optical_line_discount + "円";
+    rank2_optical_line_discount.textContent = ranking[1].optical_line_discount + "円";
+    rank3_optical_line_discount.textContent = ranking[2].optical_line_discount + "円";
+    rank4_optical_line_discount.textContent = ranking[3].optical_line_discount + "円";
   }
 }
 

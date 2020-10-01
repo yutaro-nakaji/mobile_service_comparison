@@ -1,6 +1,6 @@
 class DataTraffic < ActiveHash::Base
   self.data = [
-    { id: 1, name: '---' },
+    { id: 1, name: '想定データ通信量' },
     { id: 2, name: '〜1GB' },
     { id: 3, name: '〜2GB' },
     { id: 4, name: '〜3GB' },
