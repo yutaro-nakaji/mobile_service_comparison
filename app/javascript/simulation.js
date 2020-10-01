@@ -109,7 +109,6 @@ function price_simu(){
       document.getElementById("data_traffic").classList.remove("select-box-checked");
       document.getElementById("data_traffic").classList.add("select-box");
     }
-    console.log(generation);
     switch (generation) {
       case "2": //4G
         switch (data_traffic) {
@@ -210,63 +209,72 @@ function price_simu(){
   let family_discount_au = 0;
   let family_discount_softbank = 0;
   let family_discount_rakuten = 0;
-  family_docomo.addEventListener('input', () => {
-    const family_docomo = document.getElementById("family_docomo").value;
-    switch (family_docomo) {
-      case "1": 
-        family_discount_docomo = 0;
-        break;
-      case "2": 
-        family_discount_docomo = -500;
-        break;
-      case "3","4": 
-        family_discount_docomo = -1000;
-        break;
-    }
-    fee_calc();
-  });
-  family_au.addEventListener('input', () => {
-    const data_traffic = document.getElementById("data_traffic").value;
-    const family_au = document.getElementById("family_au").value;
-    switch (family_au) {
-      case "1": 
-        family_discount_au = 0;
-        break;
-      case "2": 
-        family_discount_au = -500;
-        break;
-      case "3": 
-        family_discount_au = -1000;
-        break;
-      case "4": 
-      switch (data_traffic) {
-        case "2","3","4","5","6","7": 
-          family_discount_au = -1000;
+  const family_docomo_list = document.getElementsByName('family_docomo');
+  family_docomo_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const family_docomo = document.querySelector("input:checked[name=family_docomo]").value;
+      switch (family_docomo) {
+        case "1": 
+          family_discount_docomo = 0;
           break;
-        case "8","9","10","11": 
-          family_discount_au = -2020;
+        case "2": 
+          family_discount_docomo = -500;
+          break;
+        case "3": 
+          family_discount_docomo = -1000;
           break;
       }
-    }
-    fee_calc();
+      fee_calc();
+    });
   });
-  family_softbank.addEventListener('input', () => {
-    const family_softbank = document.getElementById("family_softbank").value;
-    switch (family_softbank) {
-      case "1": 
-        family_discount_softbank = 0;
-        break;
-      case "2": 
-        family_discount_softbank = -500;
-        break;
-      case "3": 
-        family_discount_softbank = -1500;
-        break;
-      case "4": 
-        family_discount_softbank = -2000;
-        break;
-    }
-    fee_calc();
+  const family_au_list = document.getElementsByName('family_au');
+  family_au_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const family_au = document.querySelector("input:checked[name=family_au]").value;
+      const data_traffic = document.getElementById("data_traffic").value;
+      switch (family_au) {
+        case "1": 
+          family_discount_au = 0;
+          break;
+        case "2": 
+          family_discount_au = -500;
+          break;
+        case "3": 
+          family_discount_au = -1000;
+          break;
+        case "4": 
+        switch (data_traffic) {
+          case "2","3","4","5","6","7": 
+            family_discount_au = -1000;
+            break;
+          case "8","9","10","11": 
+            family_discount_au = -2020;
+            break;
+        }
+      }
+      fee_calc();
+    });
+  });
+  const family_softbank_list = document.getElementsByName('family_softbank');
+  family_softbank_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const family_softbank = document.querySelector("input:checked[name=family_softbank]").value;
+      switch (family_softbank) {
+        case "1": 
+          family_discount_softbank = 0;
+          break;
+        case "2": 
+          family_discount_softbank = -500;
+          break;
+        case "3": 
+          family_discount_softbank = -1500;
+          break;
+        case "4": 
+          family_discount_softbank = -2000;
+          break;
+      }
+      fee_calc();
+    });
   });
 
   //光回線セット割選択

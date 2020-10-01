@@ -59,13 +59,60 @@
           </div>
           <br>
           <div class='simulation-question'>
-            <div class="weight-bold-text">家族の通信キャリア</div>
+            <div class="weight-bold-text">家族の携帯キャリアを選択してください</div>
             docomo
-            <%= f.collection_select(:family_docomo, Number.all, :id, :name, {}, {class:"select-box", id:"family_docomo"}) %><br>
+            <group class="inline-radio">
+              <div>
+                <%= f.radio_button :family_docomo, :"1" %>
+                <%= f.label :family_docomo, "0台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_docomo, :"2" %>
+                <%= f.label :family_docomo, "1台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_docomo, :"3" %>
+                <%= f.label :family_docomo, "2台以上" %>
+              </div>
+            </group>
             au
-            <%= f.collection_select(:family_au, Number.all, :id, :name, {}, {class:"select-box", id:"family_au"}) %><br>
+            <group class="inline-radio">
+              <div>
+                <%= f.radio_button :family_au, :"1" %>
+                <%= f.label :family_au, "0台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_au, :"2" %>
+                <%= f.label :family_au, "1台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_au, :"3" %>
+                <%= f.label :family_au, "2台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_au, :"4" %>
+                <%= f.label :family_au, "3台以上" %>
+              </div>
+            </group>
             softbank
-            <%= f.collection_select(:family_softbank, Number.all, :id, :name, {}, {class:"select-box", id:"family_softbank"}) %>
+            <group class="inline-radio">
+              <div>
+                <%= f.radio_button :family_softbank, :"1" %>
+                <%= f.label :family_softbank, "0台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_softbank, :"2" %>
+                <%= f.label :family_softbank, "1台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_softbank, :"3" %>
+                <%= f.label :family_softbank, "2台" %>
+              </div>
+              <div>
+                <%= f.radio_button :family_softbank, :"4" %>
+                <%= f.label :family_softbank, "3台以上" %>
+              </div>
+            </group>
           </div>
           <br>
           <div class='simulation-question'>
