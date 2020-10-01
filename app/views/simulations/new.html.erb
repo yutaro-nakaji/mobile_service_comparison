@@ -105,152 +105,154 @@
       </div>      
     </div>
   </div>
-  <!--
-  <%= link_to image_tag("arrow.png", class:"arrow-icon") %>-->
+
   <div class='result'>
-    <p class='result-title'>シュミレーション結果</p>
-    <div class='result-table'>
-      <table class='result-rank'>
-        <tr>
-          <th class= 'line1 column1'>順位</th>
-          <th class= 'line1 column2'>キャリア</th>
-          <th class= 'line1 column3'>合計金額</th>
-          <th class= 'line1 column4'>通話料金</th>
-          <th class= 'line1 column5'>データ通信料金</th>
-          <th class= 'line1 column6'>家族割</th>
-          <th class= 'line1'>光回線セット割</th>
-          <th class= 'line1'>利用サービス</th>
-          <th class= 'line1'>利用ECサイト</th>
-          <th class= 'line1'>利用クレカ</th>
-          <th class= 'line1'>利用電子マネー</th>
-          <th class= 'line1'>利用QRコード決済</th>
-          <th class= 'line1'>利用銀行</th>
-        </tr>
-        <tr>
-          <td class='line2 column1'>1位</td>
-          <td class='line2 column2', id='1st-carrier-name'></td>
-          <td class='line2 column3'>
-            <span class= 'fee', id='1st-carrier-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line2 column4'>
-            <span class= 'fee', id='1st-calling-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line2 column5'>
-            <span class= 'fee', id='1st-data-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line2 column6'>
-            <span class= 'fee', id='1st-family-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line2 column7'>
-            <span class= 'fee', id='1st-optical-line-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td class='line3 column1'>2位</td>
-          <td class='line3 column2', id='2nd-carrier-name'></td>
-          <td class='line3 column3'>
-            <span class= 'fee', id='2nd-carrier-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line3 column4'>
-            <span class= 'fee', id='2nd-calling-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line3 column5'>
-            <span class= 'fee', id='2nd-data-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line3 column6'>
-            <span class= 'fee', id='2nd-family-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line3 column7'>
-            <span class= 'fee', id='2nd-optical-line-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td class='line4 column1'>3位</td>
-          <td class='line4 column2', id='3rd-carrier-name'></td>
-          <td class='line4 column3'>
-            <span class= 'fee', id='3rd-carrier-fee'></span>
-            <span class= 'yen'>円</span>
-          </td> 
-          <td class='line4 column4'>
-            <span class= 'fee', id='3rd-calling-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line4 column5'>
-            <span class= 'fee', id='3rd-data-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line4 column6'>
-            <span class= 'fee', id='3rd-family-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line4 column7'>
-            <span class= 'fee', id='3rd-optical-line-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td class='line5 column1'>4位</td>
-          <td class='line5 column2', id='4th-carrier-name'></td>
-          <td class='line5 column3'>
-            <span class= 'fee', id='4th-carrier-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line5 column4'>
-            <span class= 'fee', id='4th-calling-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line5 column5'>
-            <span class= 'fee', id='4th-data-fee'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line5 column6'>
-            <span class= 'fee', id='4th-family-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td class='line5 column7'>
-            <span class= 'fee', id='4th-optical-line-discount'></span>
-            <span class= 'yen'>円</span>
-          </td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
-      </table>
+    <%= link_to image_tag("ipadpro.png", class:"ipadpro") %>
+    <div class='result-screen'>
+      <p class='result-title'>シュミレーション結果</p>
+      <div class='result-table'>
+        <table class='result-rank'>
+          <tr>
+            <th class= 'line1 column1'>順位</th>
+            <th class= 'line1 column2'>キャリア</th>
+            <th class= 'line1 column3'>合計金額</th>
+            <th class= 'line1 column4'>通話料金</th>
+            <th class= 'line1 column5'>データ通信料金</th>
+            <th class= 'line1 column6'>家族割</th>
+            <th class= 'line1'>光回線セット割</th>
+            <th class= 'line1'>利用サービス</th>
+            <th class= 'line1'>利用ECサイト</th>
+            <th class= 'line1'>利用クレカ</th>
+            <th class= 'line1'>利用電子マネー</th>
+            <th class= 'line1'>利用QRコード決済</th>
+            <th class= 'line1'>利用銀行</th>
+          </tr>
+          <tr>
+            <td class='line2 column1'>1</td>
+            <td class='line2 column2', id='1st-carrier-name'></td>
+            <td class='line2 column3'>
+              <span class= 'fee', id='1st-carrier-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line2 column4'>
+              <span class= 'fee', id='1st-calling-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line2 column5'>
+              <span class= 'fee', id='1st-data-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line2 column6'>
+              <span class= 'fee', id='1st-family-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line2 column7'>
+              <span class= 'fee', id='1st-optical-line-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class='line3 column1'>2</td>
+            <td class='line3 column2', id='2nd-carrier-name'></td>
+            <td class='line3 column3'>
+              <span class= 'fee', id='2nd-carrier-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line3 column4'>
+              <span class= 'fee', id='2nd-calling-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line3 column5'>
+              <span class= 'fee', id='2nd-data-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line3 column6'>
+              <span class= 'fee', id='2nd-family-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line3 column7'>
+              <span class= 'fee', id='2nd-optical-line-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class='line4 column1'>3</td>
+            <td class='line4 column2', id='3rd-carrier-name'></td>
+            <td class='line4 column3'>
+              <span class= 'fee', id='3rd-carrier-fee'></span>
+              <span class= 'yen'>円</span>
+            </td> 
+            <td class='line4 column4'>
+              <span class= 'fee', id='3rd-calling-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line4 column5'>
+              <span class= 'fee', id='3rd-data-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line4 column6'>
+              <span class= 'fee', id='3rd-family-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line4 column7'>
+              <span class= 'fee', id='3rd-optical-line-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td class='line5 column1'>4</td>
+            <td class='line5 column2', id='4th-carrier-name'></td>
+            <td class='line5 column3'>
+              <span class= 'fee', id='4th-carrier-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line5 column4'>
+              <span class= 'fee', id='4th-calling-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line5 column5'>
+              <span class= 'fee', id='4th-data-fee'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line5 column6'>
+              <span class= 'fee', id='4th-family-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td class='line5 column7'>
+              <span class= 'fee', id='4th-optical-line-discount'></span>
+              <span class= 'yen'>円</span>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+      <div class="show-btn-contents">
+        <%= f.submit "シュミレーション結果詳細" ,class:"show-btn" %>
+      </div>
+    <% end %>
     </div>
-    <div class="show-btn-contents">
-      <%= f.submit "シュミレーション結果詳細" ,class:"show-btn" %>
-    </div>
-  <% end %>
   </div>
 </div>
