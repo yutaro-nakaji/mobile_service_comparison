@@ -42,10 +42,11 @@ function price_simu(){
   let au_trans_discount = 0;
   let softbank_trans_discount = 0;
   let rakuten_trans_discount = 0;
-    const current_carrier = document.getElementsByName('current-carrier');
-    current_carrier.forEach(function(e) {
+    const carrier_list = document.getElementsByName('current_phone');
+    carrier_list.forEach(function(e) {
       e.addEventListener("click", function() {
-      document.querySelector("input:checked[name=current-carrier]").value;
+        const current_carrier = document.querySelector("input:checked[name=current_phone]").value;
+        //実装途中
       });
   });
 
