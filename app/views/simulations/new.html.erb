@@ -1,79 +1,101 @@
-<%= render "shared/header" %>
+<!-- render "shared/header" -->
 
 <div class='simulation-page'>
   <div class='simulation'>
-    <p class='simulation-title'>料金シュミレーション</p>
-    <p class='simulation-explanation'>以下の質問に答えてください！</p>
-    <br>
-    <div class='simulation-form'>
-      <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">現在お使いのキャリア</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"current_phone"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">希望の通話プラン</div>
-          <%= f.collection_select(:duration_of_call, CallingPlan.all, :id, :name, {}, {class:"select-box", id:"duration_of_call"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">4G or 5G どちらを契約予定ですか</div>
-          <%= f.collection_select(:generation, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">1ヶ月の想定データ通信量</div>
-          <%= f.collection_select(:data_traffic, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">家族の通信キャリア</div>
-          docomo
-          <%= f.collection_select(:family_docomo, Number.all, :id, :name, {}, {class:"select-box", id:"family_docomo"}) %><br>
-          au
-          <%= f.collection_select(:family_au, Number.all, :id, :name, {}, {class:"select-box", id:"family_au"}) %><br>
-          softbank
-          <%= f.collection_select(:family_softbank, Number.all, :id, :name, {}, {class:"select-box", id:"family_softbank"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">契約している光回線</div>
-          <%= f.collection_select(:optical_line, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">利用しているサービス</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"service"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">1番利用しているECサイト</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"ecsite"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">1番利用しているクレジットカード</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"creditcard"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">1番利用している電子マネー</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"electronic_money"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">1番利用しているQRコード決済</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"qr_payment"}) %>
-        </div>
-        <br>
-        <div class='simulation-question'>
-          <div class="weight-bold-text">利用している銀行</div>
-          <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"bank"}) %>
-        </div>      
+    <%= link_to image_tag("iphone7.png", class:"iphone7") %>
+    <div class='simulation-box'>
+      <p class='simulation-title'>料金シュミレーション</p>
+      <br>
+      <p class='simulation-explanation'>以下の質問に答えてください！</p>
+      <br>
+      <div class='simulation-form'>
+        <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">現在お使いのキャリアを選択してください</div>
+            <group class="inline-radio">
+              <div>
+                <%= f.radio_button :current_phone, :docomo %>
+                <%= f.label :current_phone, "docomo" %>
+              </div>
+              <div>
+                <%= f.radio_button :current_phone, :au %>
+                <%= f.label :current_phone, "au" %>
+              </div>
+              <div>
+                <%= f.radio_button :current_phone, :softbank %>
+                <%= f.label :current_phone, "softbank" %>
+              </div>
+              <div>
+                <%= f.radio_button :current_phone, :rakuten %>
+                <%= f.label :current_phone, "rakuten" %>
+              </div>
+            </group>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">希望の通話プランを選択してください</div>
+            <%= f.collection_select(:duration_of_call, CallingPlan.all, :id, :name, {}, {class:"select-box", id:"duration_of_call"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">4G or 5G どちらを契約予定ですか</div>
+            <%= f.collection_select(:generation, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">1ヶ月の想定データ通信量</div>
+            <%= f.collection_select(:data_traffic, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">家族の通信キャリア</div>
+            docomo
+            <%= f.collection_select(:family_docomo, Number.all, :id, :name, {}, {class:"select-box", id:"family_docomo"}) %><br>
+            au
+            <%= f.collection_select(:family_au, Number.all, :id, :name, {}, {class:"select-box", id:"family_au"}) %><br>
+            softbank
+            <%= f.collection_select(:family_softbank, Number.all, :id, :name, {}, {class:"select-box", id:"family_softbank"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">契約している光回線</div>
+            <%= f.collection_select(:optical_line, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">利用しているサービス</div>
+            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"service"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">1番利用しているECサイト</div>
+            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"ecsite"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">1番利用しているクレジットカード</div>
+            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"creditcard"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">1番利用している電子マネー</div>
+            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"electronic_money"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">1番利用しているQRコード決済</div>
+            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"qr_payment"}) %>
+          </div>
+          <br>
+          <div class='simulation-question'>
+            <div class="weight-bold-text">利用している銀行</div>
+            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"bank"}) %>
+          </div>
+      </div>      
     </div>
   </div>
-  <%= link_to image_tag("arrow.png", class:"arrow-icon") %>
+  <!--
+  <%= link_to image_tag("arrow.png", class:"arrow-icon") %>-->
   <div class='result'>
     <p class='result-title'>シュミレーション結果</p>
     <div class='result-table'>
@@ -159,7 +181,7 @@
           <td class='line4 column3'>
             <span class= 'fee', id='3rd-carrier-fee'></span>
             <span class= 'yen'>円</span>
-          </td>
+          </td> 
           <td class='line4 column4'>
             <span class= 'fee', id='3rd-calling-fee'></span>
             <span class= 'yen'>円</span>
@@ -221,5 +243,3 @@
   <% end %>
   </div>
 </div>
-
-<%= render "shared/footer" %>
