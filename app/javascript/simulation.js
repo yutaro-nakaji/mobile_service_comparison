@@ -324,30 +324,30 @@ function price_simu(){
     rank3_name.textContent = ranking[2].name;
     rank4_name.textContent = ranking[3].name;
     //合計金額
-    rank1_fee.textContent = ranking[0].fee;
-    rank2_fee.textContent = ranking[1].fee;
-    rank3_fee.textContent = ranking[2].fee;
-    rank4_fee.textContent = ranking[3].fee;
+    rank1_fee.textContent = ranking[0].fee + "円";
+    rank2_fee.textContent = ranking[1].fee + "円";
+    rank3_fee.textContent = ranking[2].fee + "円";
+    rank4_fee.textContent = ranking[3].fee + "円";
     //通話料金
-    rank1_calling_fee.textContent = ranking[0].calling_fee;
-    rank2_calling_fee.textContent = ranking[1].calling_fee;
-    rank3_calling_fee.textContent = ranking[2].calling_fee;
-    rank4_calling_fee.textContent = ranking[3].calling_fee;
+    rank1_calling_fee.textContent = ranking[0].calling_fee + "円";
+    rank2_calling_fee.textContent = ranking[1].calling_fee + "円";
+    rank3_calling_fee.textContent = ranking[2].calling_fee + "円";
+    rank4_calling_fee.textContent = ranking[3].calling_fee + "円";
     //データ通信料金
-    rank1_data_fee.textContent = ranking[0].data_fee;
-    rank2_data_fee.textContent = ranking[1].data_fee;
-    rank3_data_fee.textContent = ranking[2].data_fee;
-    rank4_data_fee.textContent = ranking[3].data_fee;
+    rank1_data_fee.textContent = ranking[0].data_fee + "円";
+    rank2_data_fee.textContent = ranking[1].data_fee + "円";
+    rank3_data_fee.textContent = ranking[2].data_fee + "円";
+    rank4_data_fee.textContent = ranking[3].data_fee + "円";
     //家族割料金
-    rank1_family_discount.textContent = ranking[0].family_discount;
-    rank2_family_discount.textContent = ranking[1].family_discount;
-    rank3_family_discount.textContent = ranking[2].family_discount;
-    rank4_family_discount.textContent = ranking[3].family_discount;
+    rank1_family_discount.textContent = ranking[0].family_discount + "円";
+    rank2_family_discount.textContent = ranking[1].family_discount + "円";
+    rank3_family_discount.textContent = ranking[2].family_discount + "円";
+    rank4_family_discount.textContent = ranking[3].family_discount + "円";
     //光回線セット割料金
-    rank1_optical_line_discount.textContent = ranking[0].optical_line_discount;
-    rank2_optical_line_discount.textContent = ranking[1].optical_line_discount;
-    rank3_optical_line_discount.textContent = ranking[2].optical_line_discount;
-    rank4_optical_line_discount.textContent = ranking[3].optical_line_discount;
+    rank1_optical_line_discount.textContent = ranking[0].optical_line_discount + "円";
+    rank2_optical_line_discount.textContent = ranking[1].optical_line_discount + "円";
+    rank3_optical_line_discount.textContent = ranking[2].optical_line_discount + "円";
+    rank4_optical_line_discount.textContent = ranking[3].optical_line_discount + "円";
   }
 }
 
