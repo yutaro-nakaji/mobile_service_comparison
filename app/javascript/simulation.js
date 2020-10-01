@@ -50,6 +50,7 @@ function price_simu(){
       });
   });
 
+  //console.log();
   
 
   //通話プラン選択
@@ -57,30 +58,34 @@ function price_simu(){
   let au_calling_fee = 0;
   let softbank_calling_fee = 0;
   let rakuten_calling_fee = 0;
-  duration_of_call.addEventListener('input', () => {
-    const callingplan = document.getElementById("duration_of_call").value; 
-    switch (callingplan) {
-      case "2":
-        docomo_calling_fee = 0;
-        au_calling_fee = 0;
-        softbank_calling_fee = 0;
-        rakuten_calling_fee = 0;
-        break;
-      case "3":
-        docomo_calling_fee = 700;
-        au_calling_fee = 800;
-        softbank_calling_fee = 800;
-        rakuten_calling_fee = 0;
-        break;
-      case "4":
-        docomo_calling_fee = 1700;
-        au_calling_fee = 1800;
-        softbank_calling_fee = 1800;
-        rakuten_calling_fee = 0;
-        break;
-    }
-    fee_calc();
+  const calling_plan_list = document.getElementsByName('duration_of_call');
+  calling_plan_list.forEach(function(e) {
+    e.addEventListener("click", function() {
+      const calling_plan = document.querySelector("input:checked[name=duration_of_call]").value;
+      switch (calling_plan) {
+        case "1":
+          docomo_calling_fee = 0;
+          au_calling_fee = 0;
+          softbank_calling_fee = 0;
+          rakuten_calling_fee = 0;
+          break;
+        case "2":
+          docomo_calling_fee = 700;
+          au_calling_fee = 800;
+          softbank_calling_fee = 800;
+          rakuten_calling_fee = 0;
+          break;
+        case "3":
+          docomo_calling_fee = 1700;
+          au_calling_fee = 1800;
+          softbank_calling_fee = 1800;
+          rakuten_calling_fee = 0;
+          break;
+      }
+      fee_calc();
+    });
   });
+    
 
   //通信データ量選択
   let docomo_data_fee = 0;

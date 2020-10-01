@@ -34,7 +34,20 @@
           <br>
           <div class='simulation-question'>
             <div class="weight-bold-text">希望の通話プランを選択してください</div>
-            <%= f.collection_select(:duration_of_call, CallingPlan.all, :id, :name, {}, {class:"select-box", id:"duration_of_call"}) %>
+            <group class="inline-radio">
+              <div>
+                <%= f.radio_button :duration_of_call, :"1" %>
+                <%= f.label :duration_of_call, "従量制" %>
+              </div>
+              <div>
+                <%= f.radio_button :duration_of_call, :"2" %>
+                <%= f.label :duration_of_call, "5分無料" %>
+              </div>
+              <div>
+                <%= f.radio_button :duration_of_call, :"3" %>
+                <%= f.label :duration_of_call, "かけ放題" %>
+              </div>
+            </group>
           </div>
           <br>
           <div class='simulation-question'>
