@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: mobile_service_comparison_production
-  username: mobile_service_comparison
-  password: <%= ENV['MOBILE_SERVICE_COMPARISON_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
