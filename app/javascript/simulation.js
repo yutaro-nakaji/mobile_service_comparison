@@ -284,6 +284,12 @@ function price_simu(){
   let optical_line_discount_rakuten = 0;
   optical_line.addEventListener('input', () => {
     const optical_line = document.getElementById("optical_line").value; 
+    if (optical_line != 1) {
+      document.getElementById("optical_line").classList.add("select-box-checked");
+    }else{
+      document.getElementById("optical_line").classList.remove("select-box-checked");
+      document.getElementById("optical_line").classList.add("select-box");
+    }
     switch (optical_line) {
       case "2":
         optical_line_discount_docomo = -1000;
