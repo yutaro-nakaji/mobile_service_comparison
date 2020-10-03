@@ -45,7 +45,7 @@ function price_simu(){
     const carrier_list = document.getElementsByName('current_phone');
     carrier_list.forEach(function(e) {
       e.addEventListener("click", function() {
-        const current_carrier = document.querySelector("input:checked[name=current_phone]").value;
+        //const current_carrier = document.querySelector("input:checked[name=current_phone]").value;
         //実装途中
       });
   });
@@ -99,9 +99,10 @@ function price_simu(){
       document.getElementById("generation").classList.remove("select-box-checked");
       document.getElementById("generation").classList.add("select-box");
     }
+    datafee_calc();
+    fee_calc();
   });
   data_traffic.addEventListener('input', () => {
-    const generation = document.getElementById("generation").value;
     const data_traffic = document.getElementById("data_traffic").value;
     if (data_traffic != 1) {
       document.getElementById("data_traffic").classList.add("select-box-checked");
@@ -109,6 +110,12 @@ function price_simu(){
       document.getElementById("data_traffic").classList.remove("select-box-checked");
       document.getElementById("data_traffic").classList.add("select-box");
     }
+    datafee_calc();
+    fee_calc();
+  });
+  function datafee_calc(){
+    const generation = document.getElementById("generation").value;
+    const data_traffic = document.getElementById("data_traffic").value;
     switch (generation) {
       case "2": //4G
         switch (data_traffic) {
@@ -201,8 +208,7 @@ function price_simu(){
             break;
         }
     }
-    fee_calc();
-  });
+  }
 
   //家族割適用
   let family_discount_docomo = 0;
@@ -284,7 +290,18 @@ function price_simu(){
   let optical_line_discount_rakuten = 0;
   optical_line.addEventListener('input', () => {
     const optical_line = document.getElementById("optical_line").value; 
+    if (optical_line != 1) {
+      document.getElementById("optical_line").classList.add("select-box-checked");
+    }else{
+      document.getElementById("optical_line").classList.remove("select-box-checked");
+      document.getElementById("optical_line").classList.add("select-box");
+    }
     switch (optical_line) {
+      case "1":
+        optical_line_discount_docomo = 0;
+        optical_line_discount_au = 0;
+        optical_line_discount_softbank = 0;
+        break;
       case "2":
         optical_line_discount_docomo = -1000;
         optical_line_discount_au = 0;

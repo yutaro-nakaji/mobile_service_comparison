@@ -120,35 +120,6 @@
             <%= f.collection_select(:optical_line, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
           </div>
           <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">利用しているサービス</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"service"}) %>
-          </div>
-          <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">1番利用しているECサイト</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"ecsite"}) %>
-          </div>
-          <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">1番利用しているクレジットカード</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"creditcard"}) %>
-          </div>
-          <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">1番利用している電子マネー</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"electronic_money"}) %>
-          </div>
-          <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">1番利用しているQRコード決済</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"qr_payment"}) %>
-          </div>
-          <br>
-          <div class='simulation-question'>
-            <div class="weight-bold-text">利用している銀行</div>
-            <%= f.collection_select(:current_phone, CurrentPhone.all, :id, :name, {}, {class:"select-box", id:"bank"}) %>
-          </div>
       </div>      
     </div>
   </div>
