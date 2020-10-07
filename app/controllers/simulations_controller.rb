@@ -22,4 +22,10 @@ class SimulationsController < ApplicationController
   def show
   end
 
+  private
+
+  def simulation_params
+    params.require(:simulation).permit(:current_phone_id, :duration_of_call, :generation_id, :data_traffic_id, :family_docomo, :family_au, :family_softbank, :optical_line_id)
+  end
+
 end

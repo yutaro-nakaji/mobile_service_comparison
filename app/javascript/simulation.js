@@ -58,10 +58,12 @@ function price_simu(){
   let au_calling_fee = 0;
   let softbank_calling_fee = 0;
   let rakuten_calling_fee = 0;
-  const calling_plan_list = document.getElementsByName('duration_of_call');
+  const calling_plan_list = document.getElementsByName('simulation[duration_of_call]');
+  console.log(calling_plan_list);
   calling_plan_list.forEach(function(e) {
     e.addEventListener("click", function() {
-      const calling_plan = document.querySelector("input:checked[name=duration_of_call]").value;
+      const calling_plan = document.querySelector("input:checked[name=simulation[duration_of_call]]").value;
+      console.log(calling_plan);
       switch (calling_plan) {
         case "1":
           docomo_calling_fee = 0;

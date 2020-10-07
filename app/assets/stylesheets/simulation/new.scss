@@ -215,6 +215,7 @@ td {
   left: 2vw;
   width: 7vw;
   font-weight: bold;
+  background-color: rgb(240, 192, 192);
 }
 
 .column3 {
@@ -223,6 +224,8 @@ td {
   left: 8.9vw;
   width: 7vw;
   font-weight: bold;
+  background-color: rgb(240, 192, 192);
+  color: #d81b60;
 }
 
 .line1 {
@@ -233,10 +236,15 @@ td {
   z-index: 2;
 }
 
-.column1.line1 {
+.column1.line1, .column2.line1, .column3.line1 {
   font-style: normal;
   font-weight: normal;
+  color: #fff;
 } 
+
+.column2.line1, .column3.line1, .column4.line1 {
+  background-color: #333;
+}
 
 .show-btn-contents {
   display: flex;
