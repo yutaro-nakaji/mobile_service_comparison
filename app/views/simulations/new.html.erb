@@ -14,19 +14,19 @@
             <div class="weight-bold-text">現在お使いのキャリアを選択してください</div>
             <group class="inline-radio">
               <div>
-                <%= f.radio_button :current_phone, :docomo %>
+                <%= f.radio_button :current_phone_id, :"1" %>
                 <%= f.label :current_phone, "docomo" %>
               </div>
               <div>
-                <%= f.radio_button :current_phone, :au %>
+                <%= f.radio_button :current_phone_id, :"2" %>
                 <%= f.label :current_phone, "au" %>
               </div>
               <div>
-                <%= f.radio_button :current_phone, :softbank %>
+                <%= f.radio_button :current_phone_id, :"3" %>
                 <%= f.label :current_phone, "softbank" %>
               </div>
               <div>
-                <%= f.radio_button :current_phone, :rakuten %>
+                <%= f.radio_button :current_phone_id, :"4" %>
                 <%= f.label :current_phone, "rakuten" %>
               </div>
             </group>
@@ -53,8 +53,8 @@
           <div class='simulation-question'>
             <div class="weight-bold-text">1ヶ月の想定データ通信量を選択して下さい</div>
             <div class="pulldown">
-              <div class="pulldown-gene"><%= f.collection_select(:generation, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %></div>
-              <div class="pulldown-data"><%= f.collection_select(:data_traffic, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %></div>
+              <div class="pulldown-gene"><%= f.collection_select(:generation_id, Generation.all, :id, :name, {}, {class:"select-box", id:"generation"}) %></div>
+              <div class="pulldown-data"><%= f.collection_select(:data_traffic_id, DataTraffic.all, :id, :name, {}, {class:"select-box", id:"data_traffic"}) %></div>
             </div>
           </div>
           <br>
@@ -117,10 +117,10 @@
           <br>
           <div class='simulation-question'>
             <div class="weight-bold-text">契約している光回線</div>
-            <%= f.collection_select(:optical_line, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
+            <%= f.collection_select(:optical_line_id, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
           </div>
           <br>
-      </div>      
+      </div>
     </div>
   </div>
 
