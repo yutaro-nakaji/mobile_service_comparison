@@ -221,6 +221,7 @@ function price_simu(){
   console.log(family_docomo_list);
   family_docomo_list.forEach(function(e) {
     e.addEventListener("click", function() {
+      console.log(e);
       const family_docomo = document.querySelector("input:checked").value;
       console.log(family_docomo);
       switch (family_docomo) {
