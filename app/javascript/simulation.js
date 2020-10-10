@@ -223,7 +223,7 @@ function price_simu(){
     e.addEventListener("click", function() {
       console.log(e);
       const family_docomo = document.querySelector("input:checked").value;
-      console.log(family_docomo);
+      //console.log(family_docomo);
       switch (family_docomo) {
         case "1": 
           family_discount_docomo = 0;
