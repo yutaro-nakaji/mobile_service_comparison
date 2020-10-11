@@ -62,7 +62,7 @@ function price_simu(){
   console.log(calling_plan_list);
   calling_plan_list.forEach(function(e) {
     e.addEventListener("click", function() {
-      const calling_plan = document.querySelector("input:checked").value;
+      const calling_plan = document.querySelector("input:checked[name*=duration_of_call]").value;
       console.log(calling_plan);
       switch (calling_plan) {
         case "1":
@@ -218,11 +218,11 @@ function price_simu(){
   let family_discount_softbank = 0;
   let family_discount_rakuten = 0;
   const family_docomo_list = document.getElementsByName('simulation[family_docomo]');
-  console.log(family_docomo_list);
+  //console.log(family_docomo_list);
   family_docomo_list.forEach(function(e) {
     e.addEventListener("click", function() {
-      console.log(e);
-      const family_docomo = document.querySelector("input:checked").value;
+      //console.log(e);
+      const family_docomo = document.querySelector("input:checked[name*=family_docomo]").value;
       //console.log(family_docomo);
       switch (family_docomo) {
         case "1": 
@@ -241,7 +241,7 @@ function price_simu(){
   const family_au_list = document.getElementsByName('simulation[family_au]');
   family_au_list.forEach(function(e) {
     e.addEventListener("click", function() {
-      const family_au = document.querySelector("input:checked").value;
+      const family_au = document.querySelector("input:checked[name*=family_au]").value;
       const data_traffic = document.getElementById("data_traffic").value;
       switch (family_au) {
         case "1": 
@@ -254,6 +254,7 @@ function price_simu(){
           family_discount_au = -1000;
           break;
         case "4": 
+        console.log(data_traffic);
         switch (data_traffic) {
           case "2","3","4","5","6","7": 
             family_discount_au = -1000;
@@ -269,7 +270,7 @@ function price_simu(){
   const family_softbank_list = document.getElementsByName('simulation[family_softbank]');
   family_softbank_list.forEach(function(e) {
     e.addEventListener("click", function() {
-      const family_softbank = document.querySelector("input:checked").value;
+      const family_softbank = document.querySelector("input:checked[name*=family_softbank]").value;
       switch (family_softbank) {
         case "1": 
           family_discount_softbank = 0;
