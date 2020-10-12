@@ -6,10 +6,11 @@
     <div class='simulation-box'>
       <p class='simulation-title'>料金シミュレーション</p>
       <br>
-      <p class='simulation-explanation'>以下の質問に答えてください！</p>
+      <p class='simulation-explanation'>以下の質問にご回答お願いします</p>
       <br>
       <div class='simulation-form'>
         <%= form_with model: @simulation, url: simulations_path, method: :post, local: true do |f| %>
+          <!--
           <div class='simulation-question'>
             <div class="weight-bold-text">現在お使いのキャリアを選択してください</div>
             <group class="inline-radio">
@@ -31,7 +32,7 @@
               </div>
             </group>
           </div>
-          <br>
+          <br>-->
           <div class='simulation-question'>
             <div class="weight-bold-text">希望の通話プランを選択してください</div>
             <group class="inline-radio">
@@ -116,7 +117,7 @@
           </div>
           <br>
           <div class='simulation-question'>
-            <div class="weight-bold-text">契約している光回線</div>
+            <div class="weight-bold-text">契約している光回線を選択してください</div>
             <%= f.collection_select(:optical_line_id, OpticalLine.all, :id, :name, {}, {class:"select-box", id:"optical_line"}) %>
           </div>
           <br>
