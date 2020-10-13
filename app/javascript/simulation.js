@@ -59,7 +59,6 @@ function price_simu(){
   let softbank_calling_fee = 0;
   let rakuten_calling_fee = 0;
   const calling_plan_list = document.getElementsByName('simulation[duration_of_call]');
-  console.log(calling_plan_list);
   calling_plan_list.forEach(function(e) {
     e.addEventListener("click", function() {
       const calling_plan = document.querySelector("input:checked[name*=duration_of_call]").value;
