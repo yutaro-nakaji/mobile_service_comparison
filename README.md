@@ -86,6 +86,5 @@ http://mymosimosi.com/
 ・比較結果をもとに契約を行うページへ遷移する<br>
 <br>
 <br>
-<br>
 
 
