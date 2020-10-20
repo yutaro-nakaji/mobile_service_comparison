@@ -1,7 +1,7 @@
 # アプリ名
 #### Mobile Service Simulation
 ##### （通称：Myモシモシ）
-※<font color="red">Mo</font>bile Service <font color="red">Si</font>mulation
+※Mobile Service Simulation
 の「Mo」と「Si」から「モシ」が来て、携帯比較がテーマのアプリなので「モシモシ」としました。そして、利用者それぞれがシミュレーション結果を見れるということで、先頭に「My」をつけ、「Myモシモシ」という通称にしました。
 <br>
 <br>
