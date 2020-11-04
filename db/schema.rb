@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_23_043425) do
+ActiveRecord::Schema.define(version: 2020_11_04_063311) do
 
   create_table "simulations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "duration_of_call"
-    t.integer "data_traffic"
-    t.integer "optical_line"
+    t.integer "data_traffic_id"
+    t.integer "optical_line_id"
     t.integer "service"
     t.integer "ecsite"
     t.integer "creditcard"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_043425) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "current_phone"
-    t.integer "generation"
+    t.integer "generation_id"
     t.integer "family_au"
     t.integer "family_docomo"
     t.integer "family_softbank"
