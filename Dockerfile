@@ -5,9 +5,9 @@ RUN apt-get update -qq && \
                        libpq-dev \        
                        nodejs      
 
-RUN mkdir /app_name 
+RUN mkdir /mobile_service_comparison 
 
-ENV APP_ROOT /app_name 
+ENV APP_ROOT /mobile_service_comparison 
 WORKDIR $APP_ROOT
 
 ADD ./Gemfile $APP_ROOT/Gemfile
