@@ -12,7 +12,7 @@
 <br>
 
 # URL
-http://mymosimosi.com/
+https://mymosimosi.com/
 <br>
 <br>
 
