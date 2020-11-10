@@ -10,7 +10,7 @@ class SimulationsController < ApplicationController
   def create
     @simulation = Simulation.new(simulation_params)
     if @simulation.save
-      redirect_to new_simulation_path
+      redirect_to simulation_path(@simulation.id)
     else
       render :new
     end
